@@ -401,26 +401,26 @@
 \path[fill=c151E32,draw=c30405A,line width=0.4pt,rounded corners=1.2mm] (0.8400,6.3000) rectangle (3.5400,4.3320);
 \node[anchor=north,inner sep=0pt,text width=2.4000cm,align=center,text=cF6F8FF,font=\fontsize{9.60}{11.81}\selectfont\bfseries] at (2.1960,5.8840) {SemBench};
 \node[anchor=north,inner sep=0pt,text width=2.4840cm,align=center,text=cA7B7CC,font=\fontsize{6.72}{8.27}\selectfont] at (2.1900,5.1640) {query + data};
-\draw[draw=c63DFDF,line width=0.75pt] (3.5640,5.3280)--(3.8400,5.3280);
+\draw[-{Stealth[length=1.6mm,width=1.2mm]},draw=c63DFDF,line width=0.75pt] (3.5640,5.3280)--(3.8400,5.3280);
 \path[fill=c151E32,draw=c30405A,line width=0.4pt,rounded corners=1.2mm] (3.9000,6.3000) rectangle (6.6000,4.3320);
 \node[anchor=north,inner sep=0pt,text width=2.4000cm,align=center,text=cF6F8FF,font=\fontsize{9.60}{11.81}\selectfont\bfseries] at (5.2560,5.8840) {Query plan};
 \node[anchor=north,inner sep=0pt,text width=2.4840cm,align=center,text=cA7B7CC,font=\fontsize{6.72}{8.27}\selectfont] at (5.2500,5.1640) {pairs / rows};
-\draw[draw=c63DFDF,line width=0.75pt] (6.6240,5.3280)--(6.9000,5.3280);
+\draw[-{Stealth[length=1.6mm,width=1.2mm]},draw=c63DFDF,line width=0.75pt] (6.6240,5.3280)--(6.9000,5.3280);
 \path[fill=c233B4D,draw=c30405A,line width=0.4pt,rounded corners=1.2mm] (6.9600,6.3000) rectangle (9.6600,4.3320);
 \node[anchor=north,inner sep=0pt,text width=2.4000cm,align=center,text=c63DFDF,font=\fontsize{9.60}{11.81}\selectfont\bfseries] at (8.3160,5.8840) {SystemOne};
 \node[anchor=north,inner sep=0pt,text width=2.4840cm,align=center,text=cA7B7CC,font=\fontsize{6.72}{8.27}\selectfont] at (8.3100,5.1640) {CLEF Omni};
-\draw[draw=c63DFDF,line width=0.75pt] (9.6840,5.3280)--(9.9600,5.3280);
+\draw[-{Stealth[length=1.6mm,width=1.2mm]},draw=c63DFDF,line width=0.75pt] (9.6840,5.3280)--(9.9600,5.3280);
 \path[fill=c151E32,draw=c30405A,line width=0.4pt,rounded corners=1.2mm] (10.0200,6.3000) rectangle (12.7200,4.3320);
-\node[anchor=north,inner sep=0pt,text width=2.4000cm,align=center,text=cF6F8FF,font=\fontsize{9.60}{11.81}\selectfont\bfseries] at (11.3760,5.8840) {Relational steps};
-\node[anchor=north,inner sep=0pt,text width=2.4840cm,align=center,text=cA7B7CC,font=\fontsize{6.72}{8.27}\selectfont] at (11.3700,5.1640) {result table};
-\draw[draw=c63DFDF,line width=0.75pt] (12.7440,5.3280)--(13.0200,5.3280);
+\node[anchor=center,inner sep=0pt,text width=2.5000cm,align=center,text=cF6F8FF,font=\fontsize{9.30}{11.20}\selectfont\bfseries] at (11.3760,5.7250) {Relational steps};
+\node[anchor=center,inner sep=0pt,text width=2.4840cm,align=center,text=cA7B7CC,font=\fontsize{6.72}{8.27}\selectfont] at (11.3700,4.8150) {result table};
+\draw[-{Stealth[length=1.6mm,width=1.2mm]},draw=c63DFDF,line width=0.75pt] (12.7440,5.3280)--(13.0200,5.3280);
 \path[fill=c151E32,draw=c30405A,line width=0.4pt,rounded corners=1.2mm] (13.0800,6.3000) rectangle (15.7800,4.3320);
 \node[anchor=north,inner sep=0pt,text width=2.4000cm,align=center,text=cF6F8FF,font=\fontsize{9.60}{11.81}\selectfont\bfseries] at (14.4360,5.8840) {Evaluator};
 \node[anchor=north,inner sep=0pt,text width=2.4840cm,align=center,text=cA7B7CC,font=\fontsize{6.72}{8.27}\selectfont] at (14.4300,5.1640) {query score};
 \draw[draw=cFFB779,line width=0.75pt] (7.0920,4.1280)--(7.0920,2.9760);
 \path[fill=c1D2940,draw=cFFB779,line width=0.4pt,rounded corners=1.2mm] (5.3160,2.8920) rectangle (9.2880,1.9440);
 \node[anchor=north,inner sep=0pt,text width=3.6240cm,align=center,text=cFFB779,font=\fontsize{7.68}{9.45}\selectfont\bfseries] at (7.3080,2.6440) {Inspectable decision trace};
-\node[anchor=north,inner sep=0pt,text width=2.4000cm,align=center,text=c72819B,font=\fontsize{7.30}{8.70}\selectfont] at (7.4040,3.8440) {POST /v1/systemone};
+\node[anchor=center,inner sep=0pt,text width=4.5000cm,align=center,text=c72819B,font=\fontsize{7.30}{8.70}\selectfont] at (8.3100,3.5500) {POST /v1/systemone};
 \end{scope}\end{tikzpicture}
 \note{This is the completed architecture. The runner invokes the vLLM POST /v1/systemone endpoint. Each main-format request contains a source row or pair and one question; requests may run concurrently. Scenario-specific query plans perform normal filtering, joins, grouping, sorting, and formatting around decisions. We save requests, responses, probabilities, timing, errors, and final tables so decisions can be audited. SemBench’s existing evaluator scores the complete output, not just one model call.}
 \end{frame}
