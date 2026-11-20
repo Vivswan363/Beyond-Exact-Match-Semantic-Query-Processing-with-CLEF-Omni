@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{pgfpages}
 \usepackage{hyperref}
+\usepackage{adjustbox}
 \setsansfont{Arimo}
 \setmainfont{Arimo}
 \usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric}
@@ -657,6 +658,30 @@
 \node[anchor=north,inner sep=0pt,text width=11.1480cm,align=center,text=cFFB779,font=\fontsize{8.64}{10.63}\selectfont\bfseries] at (8.0220,0.8440) {POSSIBLE FUTURE: reuse the RIGHT state};
 \end{scope}\end{tikzpicture}
 \note{Build part two. The final question stage can use both input states and produce a pairwise structured judgment. The hoped-for path is to cache early RIGHT states and feed them into later computation for many LEFT partners. That skip-work mechanism is not in the current system. This slide is deliberately labeled possible future, not an achieved speedup.}
+\end{frame}
+
+%%% LAYER ISOLATION RESULTS
+
+
+
+% Slide 1: Upper half
+\begin{frame}[plain]
+    \centering
+    \vfill
+    \clipbox{0 0 0 {0.5\height}}{%
+        \includegraphics[width=\linewidth]{all_queries_no_parallel_rope_vs_cutoff.png}%
+    }
+    \vfill
+\end{frame}
+
+% Slide 2: Lower half
+\begin{frame}[plain]
+    \centering
+    \vfill
+    \clipbox{0 {0.5\height} 0 0}{%
+        \includegraphics[width=\linewidth]{all_queries_no_parallel_rope_vs_cutoff.png}%
+    }
+    \vfill
 \end{frame}
 % --------------------------------------------------------------------
 % Slide 21
